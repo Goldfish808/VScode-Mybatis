@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 @Configuration
-@MapperScan(basePackages = "site.metacoding.red.domain")
+@MapperScan(basePackages = "site.metacoding.firstapp.domain")
 public class MyBatisConfig {
   @Bean
   public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
@@ -21,9 +21,6 @@ public class MyBatisConfig {
     sessionFactory.setDataSource(dataSource);
     sessionFactory.setMapperLocations(
         new PathMatchingResourcePatternResolver().getResources("classpath:mapper/*.xml"));
-    // Resource myBatisConfig = new
-    // PathMatchingResourcePatternResolver().getResource("classpath:mybatis-config.xml");
-    // sessionFactory.setConfigLocation(myBatisConfig);
 
     org.apache.ibatis.session.Configuration config = new org.apache.ibatis.session.Configuration();
     config.setMapUnderscoreToCamelCase(true);

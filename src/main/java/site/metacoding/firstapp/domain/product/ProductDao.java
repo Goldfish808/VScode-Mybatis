@@ -9,7 +9,7 @@ public interface ProductDao {
 
   public void insert(Product product);
 
-  public void update(Integer id, Product prodcut);
+  public void update(Product prodcut);
 
   public void deleteById(Integer id);
 }
